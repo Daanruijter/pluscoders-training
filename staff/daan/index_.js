@@ -2,41 +2,51 @@ function indexOf(text, pattern) {
 
   
 
-
+let indices = []
 
     for (i = 0; i < pattern.length; i++) {
         for (j = 0; j < text.length; j++) {
             
-            if (pattern[i] == text[j] ){
-               console.log(text[j])
-              
-                
-                
+            if(i < pattern.length-1) {
+            if (pattern[i] == text[j]&&(pattern[i+1] == text[j+1]) ){
+               indices.push(j)
             }
+                              
+            }
+            if(i == pattern.length-1) {
+                if (pattern[pattern.length-1] == text[(j+(pattern.length-1)-i)]){
+                   indices.push(j)
+                }
+                                  
+                }
         }
     }
+    // console.log(indices)
     console.log("next")
+    if(indices[0]){return indices[0]}
+    else return -1
 }
 
 
-//test
-indexOf("    ", "")
 
-indexOf("salute 👋 you", "👋")
+//test 
+console.log(indexOf("    ", ""))
 
-indexOf("Hello, World!", "World")
+console.log(indexOf("salute 👋 you", "👋"))
 
-indexOf("Hello, World!", "ello")
+console.log(indexOf("Hello, World!", "World"))
 
-indexOf("Hello, World!", "orld")
+console.log(indexOf("Hello, World!", "ello"))
 
-indexOf("Hello, World!", ",")
+console.log(indexOf("Hello, World!", "orld"))
 
-indexOf("Hello, World!", "!")
+console.log(indexOf("Hello, World!", ","))
 
-indexOf("Hello, World!", "What?")
+console.log(indexOf("Hello, World!", "!"))
 
-indexOf("Hello, World!", "Hola")
+console.log(indexOf("Hello, World!", "What?"))
+
+console.log(indexOf("Hello, World!", "Hola"))
 
 
 
