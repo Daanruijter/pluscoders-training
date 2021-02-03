@@ -1,50 +1,55 @@
 function indexOf(text, pattern) {
-
-
-    //to push the matching indices to the array
-    let indices = []
-
     for (i = 0; i < pattern.length; i++) {
         for (j = 0; j < text.length; j++) {
-
-            //if the patterns length is 0 (to also capture the first test)
-            if (pattern.length == 1) {
-                if (pattern[i] == text[j]) {
-                    indices.push(j)
-                }
+            if (text[j] == pattern[i]) {
+                console.log(text[j])
+                i+=1
             }
-
-            //if the patterns length is greater than 1 
-            if (pattern.length > 1) {
-
-                //if the outer loop is not at the last letter of the pattern
-                if (i < pattern.length - 1) {
-
-                    if (pattern[i] == text[j] && (pattern[i + 1] == text[j + 1])) {
-                      
-                        indices.push(j)
-                    }
-
-                }
-                //if the outer loop is at the last letter of the pattern
-                if (i == pattern.length - 1) {
-                    if (pattern[pattern.length - 1] == text[(j + (pattern.length - 1) - i)]) {
-                        indices.push(j)
-                    }
-
-                }
+            else {
+                i=0
             }
         }
     }
-    
-    console.log("next")
 
-    //if there is a first item in the array, which is the index what we are looking for, return it, 
-    //else return -1, because the pattern is not found
 
-    if (indices[0]) { return indices[0] }
-    else return -1
+
+
+
+    //     let i = 0
+    //     let j = 0
+
+    // let array = []
+    // let index;
+
+    //     while (i < pattern.length) {
+    //         // console.log(i, "i")
+
+    //         while (j < text.length) {
+    //             // console.log(text)
+    //             // console.log(j, "j")
+
+    //             if (text[j] == pattern[i]) {
+    //              index = j
+    //                 array.push(j)
+    //                 console.log(text[j])
+    //                 i += 1
+    //                 j += 1
+    //             }
+
+    //             else {
+    //                 j+=1
+
+    //             }
+
+    //         }
+
+    //     }
+    // console.log(array)
+
+    return "next"
 }
+
+
 
 
 
@@ -151,7 +156,7 @@ console.log(indexOf("Hello, World!", "Hola"))
 //                 if (i < pattern.length - 1) {
 
 //                     if (pattern[i] == text[j] && (pattern[i + 1] == text[j + 1])) {
-                      
+
 //                         indices.push(j)
 //                     }
 
@@ -166,7 +171,7 @@ console.log(indexOf("Hello, World!", "Hola"))
 //             }
 //         }
 //     }
-    
+
 //     console.log("next")
 
 //     //if there is a first item in the array, which is the index what we are looking for, return it, 
