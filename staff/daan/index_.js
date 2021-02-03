@@ -1,54 +1,25 @@
 function indexOf(text, pattern) {
-    for (i = 0; i < pattern.length; i++) {
-        for (j = 0; j < text.length; j++) {
-            if (text[j] == pattern[i]) {
-                console.log(text[j])
-                i+=1
-            }
-            else {
-                i=0
-            }
-        }
+
+
+    let j = 0
+    let matchingIndices = pattern[j]
+    let iCounter = 0
+
+for (let i = 0; i < text.length; i ++) {
+  console.log(i, "i")
+    if(text[i]== matchingIndices ) {
+    console.log(text[i])
+    console.log((iCounter-i), "counter")
+        j+=1
+        iCounter+=1
+         matchingIndices = pattern[j]
+         iCounter = i
+        
     }
-
-
-
-
-
-    //     let i = 0
-    //     let j = 0
-
-    // let array = []
-    // let index;
-
-    //     while (i < pattern.length) {
-    //         // console.log(i, "i")
-
-    //         while (j < text.length) {
-    //             // console.log(text)
-    //             // console.log(j, "j")
-
-    //             if (text[j] == pattern[i]) {
-    //              index = j
-    //                 array.push(j)
-    //                 console.log(text[j])
-    //                 i += 1
-    //                 j += 1
-    //             }
-
-    //             else {
-    //                 j+=1
-
-    //             }
-
-    //         }
-
-    //     }
-    // console.log(array)
-
-    return "next"
 }
 
+return "next"
+}
 
 
 
@@ -60,17 +31,17 @@ console.log(indexOf("salute 👋 you", "👋"))
 
 console.log(indexOf("Hello, World!", "World"))
 
-console.log(indexOf("Hello, World!", "ello"))
+    console.log(indexOf("Hello, World!", "ello"))
 
-console.log(indexOf("Hello, World!", "orld"))
+    console.log(indexOf("Hello, World!", "orld"))
 
-console.log(indexOf("Hello, World!", ","))
+    console.log(indexOf("Hello, World!", ","))
 
-console.log(indexOf("Hello, World!", "!"))
+    console.log(indexOf("Hello, World!", "!"))
 
-console.log(indexOf("Hello, World!", "What?"))
+    console.log(indexOf("Hello, World!", "What?"))
 
-console.log(indexOf("Hello, World!", "Hola"))
+    console.log(indexOf("Hello, World!", "Hola"))
 
 
 
